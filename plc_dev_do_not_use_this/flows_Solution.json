@@ -131,10 +131,10 @@
             "b21a4f9c5ea48486",
             "3721ba1125f3e447"
         ],
-        "x": 94,
+        "x": 54,
         "y": 619,
-        "w": 858,
-        "h": 522
+        "w": 898,
+        "h": 628
     },
     {
         "id": "9a1553f8c3041295",
@@ -333,12 +333,16 @@
             "1f7cda0250f19a40",
             "67e827ab2bcbf3fb",
             "390e22c352b33b3d",
-            "039d1f28329253be"
+            "039d1f28329253be",
+            "4587637fe103d246",
+            "b8a9c1f4ea9287ec",
+            "2c2883ed50eec502",
+            "0f5d94d0da302327"
         ],
         "x": 94,
         "y": 1099,
         "w": 832,
-        "h": 322
+        "h": 362
     },
     {
         "id": "42bf83e78c2448df",
@@ -433,12 +437,14 @@
         "nodes": [
             "1e189ecd802172e5",
             "602f4c0ed027a896",
-            "6243fa7ea09362a4"
+            "6243fa7ea09362a4",
+            "b249cd330da477ec",
+            "a6d3a6403e3aa2f2"
         ],
         "x": 354,
         "y": 719,
         "w": 572,
-        "h": 82
+        "h": 142
     },
     {
         "id": "b4acbb4fa910b71d",
@@ -457,12 +463,14 @@
         "nodes": [
             "52bfe6c137bd1644",
             "3c3321ef3d105be0",
-            "575b8dd8c92560ac"
+            "575b8dd8c92560ac",
+            "0a9755862611fd03",
+            "1e3061c59c4cd36b"
         ],
         "x": 354,
-        "y": 839,
+        "y": 859,
         "w": 572,
-        "h": 82
+        "h": 142
     },
     {
         "id": "399266970ed3c8d1",
@@ -481,12 +489,15 @@
         "nodes": [
             "f8c71b02e2e6a3cf",
             "35519cde47a513a6",
-            "059ec5ae6fe47060"
+            "059ec5ae6fe47060",
+            "d754889552b4d824",
+            "7c1646ae05a37e45",
+            "720cd3c91808a3f0"
         ],
         "x": 354,
-        "y": 979,
+        "y": 1019,
         "w": 572,
-        "h": 82
+        "h": 202
     },
     {
         "id": "ed59cf58bbaea28e",
@@ -610,6 +621,55 @@
         "h": 82
     },
     {
+        "id": "5adda75cca88e5ca",
+        "type": "group",
+        "z": "2bad001094a8eeb2",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "93a6098f5986f2c4",
+            "3f1b9d2fc17912ed",
+            "6f5f1851d7f7e5c4",
+            "01d3b3094f1b7a98",
+            "ccc112e11e34a89a"
+        ],
+        "x": 74,
+        "y": 39,
+        "w": 912,
+        "h": 202
+    },
+    {
+        "id": "51d4bd9d9711b67f",
+        "type": "group",
+        "z": "2bad001094a8eeb2",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "993a056fce7fd798",
+            "368d5407b6b24fc2",
+            "308321925688e5da",
+            "f727fcd75e61a30b"
+        ],
+        "x": 254,
+        "y": 299,
+        "w": 392,
+        "h": 262
+    },
+    {
         "id": "8966a7b403a8fb88",
         "type": "ui-theme",
         "name": "Default Theme",
@@ -631,7 +691,7 @@
     {
         "id": "66c6923e3822666a",
         "type": "ui-page",
-        "name": "User Interface for Lab 05",
+        "name": "User Interface for Lab 07",
         "ui": "926d3079c9560d19",
         "path": "/robot",
         "icon": "robot-happy-outline",
@@ -976,99 +1036,25 @@
         "groupType": "default"
     },
     {
-        "id": "af0c0102e0191bc8",
-        "type": "ctrlx-datalayer-subscribe",
-        "z": "2bad001094a8eeb2",
-        "subscription": "c5b0190b901ecb86",
-        "path": "diagnosis/get/actual/list",
-        "name": "Read pending diagnostics",
-        "inputs": 0,
-        "x": 290,
-        "y": 320,
-        "wires": [
-            [
-                "367e1ba061c76fec"
-            ]
-        ]
-    },
-    {
-        "id": "367e1ba061c76fec",
-        "type": "function",
-        "z": "2bad001094a8eeb2",
-        "name": "make value",
-        "func": "var newMsg = {}\nvar myArray = msg.payload.listDiagnosisIdentificationWithTimestamp\nnewMsg.payload = \"Pending diagnostics:<br>\"\nfor (let index = 0; index < (myArray.length -1); ++index) {\n    newMsg.payload += index + \": \" \n    + myArray[index].diagnosisIdentification.mainDiagnosisNumber \n    + \", \" + myArray[index].diagnosisIdentification.detailedDiagnosisNumber \n    + \", \" + myArray[index].diagnosisIdentification.entity + \";<br>\"\n}\nreturn newMsg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 650,
-        "y": 320,
-        "wires": [
-            [
-                "df0ecc0a8e713ac5",
-                "14d13746ef31be24",
-                "93a6098f5986f2c4"
-            ]
-        ]
-    },
-    {
         "id": "308321925688e5da",
         "type": "comment",
         "z": "2bad001094a8eeb2",
-        "name": "Example: Get main diagnosis text",
+        "g": "51d4bd9d9711b67f",
+        "name": "Example: Log Robot Commands",
         "info": "",
-        "x": 390,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "df0ecc0a8e713ac5",
-        "type": "debug",
-        "z": "2bad001094a8eeb2",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 880,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "14d13746ef31be24",
-        "type": "ui-text",
-        "z": "2bad001094a8eeb2",
-        "group": "fbfbd88b612bc6d2",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "text",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#717171",
-        "wrapText": false,
-        "className": "",
-        "x": 810,
-        "y": 420,
+        "x": 410,
+        "y": 520,
         "wires": []
     },
     {
         "id": "93a6098f5986f2c4",
         "type": "ui-table",
         "z": "2bad001094a8eeb2",
+        "g": "5adda75cca88e5ca",
         "group": "fbfbd88b612bc6d2",
         "name": "",
-        "label": "",
-        "order": 0,
+        "label": "Pending Diagnostics",
+        "order": 1,
         "width": 0,
         "height": 0,
         "maxrows": 0,
@@ -1079,9 +1065,135 @@
         "columns": [],
         "mobileBreakpoint": "sm",
         "mobileBreakpointType": "defaults",
-        "action": "append",
-        "x": 870,
-        "y": 180,
+        "action": "replace",
+        "x": 860,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f1b9d2fc17912ed",
+        "type": "debug",
+        "z": "2bad001094a8eeb2",
+        "g": "5adda75cca88e5ca",
+        "name": "Diagnostic",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "6f5f1851d7f7e5c4",
+        "type": "ctrlx-datalayer-subscribe",
+        "z": "2bad001094a8eeb2",
+        "g": "5adda75cca88e5ca",
+        "subscription": "c5b0190b901ecb86",
+        "path": "diagnosis/get/actual/list",
+        "name": "Read pending diagnostics",
+        "inputs": 0,
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "01d3b3094f1b7a98"
+            ]
+        ]
+    },
+    {
+        "id": "01d3b3094f1b7a98",
+        "type": "function",
+        "z": "2bad001094a8eeb2",
+        "g": "5adda75cca88e5ca",
+        "name": "Build Pending Diagnostics Array",
+        "func": "var newMsg = {}\nvar myArray = msg.payload.listDiagnosisIdentificationWithTimestamp\nvar newDiagArray = [];\n\nfor (let index = 0; index < (myArray.length -1); ++index) {\n    newDiagArray.push({\n        TimeStamp: myArray[index].timestamp,\n        MainDiagNumber: myArray[index].diagnosisIdentification.mainDiagnosisNumber,\n        DetailledDiagNumber: myArray[index].diagnosisIdentification.detailedDiagnosisNumber,\n        Entity: myArray[index].diagnosisIdentification.entity\n    });\n}\n\nnewMsg.payload = newDiagArray;\n\nreturn newMsg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 140,
+        "wires": [
+            [
+                "3f1b9d2fc17912ed",
+                "93a6098f5986f2c4"
+            ]
+        ]
+    },
+    {
+        "id": "ccc112e11e34a89a",
+        "type": "comment",
+        "z": "2bad001094a8eeb2",
+        "g": "5adda75cca88e5ca",
+        "name": "Pending Diagnostics",
+        "info": "",
+        "x": 190,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "993a056fce7fd798",
+        "type": "debug",
+        "z": "2bad001094a8eeb2",
+        "g": "51d4bd9d9711b67f",
+        "name": "To Logger",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "368d5407b6b24fc2",
+        "type": "link in",
+        "z": "2bad001094a8eeb2",
+        "g": "51d4bd9d9711b67f",
+        "name": "link in Logger",
+        "links": [
+            "0a9755862611fd03",
+            "4587637fe103d246",
+            "b249cd330da477ec",
+            "b8a9c1f4ea9287ec",
+            "d754889552b4d824"
+        ],
+        "x": 325,
+        "y": 340,
+        "wires": [
+            [
+                "993a056fce7fd798",
+                "f727fcd75e61a30b"
+            ]
+        ]
+    },
+    {
+        "id": "f727fcd75e61a30b",
+        "type": "file",
+        "z": "2bad001094a8eeb2",
+        "g": "51d4bd9d9711b67f",
+        "name": "Write LogRobot",
+        "filename": "C:/Users/cedric.lenoir/Documents/RobotLogger/LogRobot.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 520,
+        "y": 440,
         "wires": [
             []
         ]
@@ -1739,10 +1851,11 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 170,
-        "y": 1320,
+        "y": 1360,
         "wires": [
             [
-                "b2783e101e7fe4df"
+                "b2783e101e7fe4df",
+                "0f5d94d0da302327"
             ]
         ]
     },
@@ -1779,10 +1892,11 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 170,
-        "y": 1140,
+        "y": 1180,
         "wires": [
             [
-                "deb09a875fcefa78"
+                "deb09a875fcefa78",
+                "2c2883ed50eec502"
             ]
         ]
     },
@@ -1800,7 +1914,7 @@
         "finalize": "",
         "libs": [],
         "x": 590,
-        "y": 1140,
+        "y": 1180,
         "wires": [
             [
                 "ed6c1bcb6b5a5b3a"
@@ -1821,7 +1935,7 @@
         "finalize": "",
         "libs": [],
         "x": 590,
-        "y": 1200,
+        "y": 1240,
         "wires": [
             [
                 "ed6c1bcb6b5a5b3a"
@@ -1841,7 +1955,7 @@
         "pendingWarnLevel": 50,
         "pendingErrorLevel": 100,
         "x": 820,
-        "y": 1140,
+        "y": 1180,
         "wires": [
             []
         ]
@@ -1860,7 +1974,7 @@
         "finalize": "",
         "libs": [],
         "x": 590,
-        "y": 1320,
+        "y": 1360,
         "wires": [
             [
                 "1f7cda0250f19a40"
@@ -1881,7 +1995,7 @@
         "finalize": "",
         "libs": [],
         "x": 590,
-        "y": 1380,
+        "y": 1420,
         "wires": [
             [
                 "1f7cda0250f19a40"
@@ -1901,7 +2015,7 @@
         "pendingWarnLevel": 50,
         "pendingErrorLevel": 100,
         "x": 820,
-        "y": 1320,
+        "y": 1360,
         "wires": [
             []
         ]
@@ -2084,8 +2198,8 @@
         "links": [
             "3721ba1125f3e447"
         ],
-        "x": 355,
-        "y": 1280,
+        "x": 465,
+        "y": 1300,
         "wires": [
             [
                 "0783d842b8819c0e",
@@ -2117,7 +2231,7 @@
             "a09007a490960a6d"
         ],
         "x": 195,
-        "y": 1380,
+        "y": 1420,
         "wires": [
             [
                 "88604fb51c1c730a"
@@ -2148,10 +2262,80 @@
             "26e75b1d97ea9010"
         ],
         "x": 195,
-        "y": 1200,
+        "y": 1240,
         "wires": [
             [
                 "0783d842b8819c0e"
+            ]
+        ]
+    },
+    {
+        "id": "4587637fe103d246",
+        "type": "link out",
+        "z": "eaf2bfc7454623a0",
+        "g": "c3317933d6ba62d6",
+        "name": "link out Open",
+        "mode": "link",
+        "links": [
+            "368d5407b6b24fc2"
+        ],
+        "x": 505,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "b8a9c1f4ea9287ec",
+        "type": "link out",
+        "z": "eaf2bfc7454623a0",
+        "g": "c3317933d6ba62d6",
+        "name": "link out Close",
+        "mode": "link",
+        "links": [
+            "368d5407b6b24fc2"
+        ],
+        "x": 365,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "2c2883ed50eec502",
+        "type": "function",
+        "z": "eaf2bfc7454623a0",
+        "g": "c3317933d6ba62d6",
+        "name": "Open Message",
+        "func": "var position = msg.payload;\n\nmsg.payload = {Action:\"Open Gripper\",Value:true};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 1140,
+        "wires": [
+            [
+                "4587637fe103d246"
+            ]
+        ]
+    },
+    {
+        "id": "0f5d94d0da302327",
+        "type": "function",
+        "z": "eaf2bfc7454623a0",
+        "g": "c3317933d6ba62d6",
+        "name": "Close Message",
+        "func": "var position = msg.payload;\n\nmsg.payload = {Action:\"Close Gripper\",Value:true};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 1280,
+        "wires": [
+            [
+                "b8a9c1f4ea9287ec"
             ]
         ]
     },
@@ -3240,7 +3424,8 @@
         "y": 760,
         "wires": [
             [
-                "6243fa7ea09362a4"
+                "6243fa7ea09362a4",
+                "a6d3a6403e3aa2f2"
             ]
         ]
     },
@@ -3312,10 +3497,11 @@
         "colorThumb": "",
         "showTextField": true,
         "x": 460,
-        "y": 880,
+        "y": 900,
         "wires": [
             [
-                "575b8dd8c92560ac"
+                "575b8dd8c92560ac",
+                "1e3061c59c4cd36b"
             ]
         ]
     },
@@ -3332,7 +3518,7 @@
         "pendingWarnLevel": 50,
         "pendingErrorLevel": 100,
         "x": 850,
-        "y": 880,
+        "y": 900,
         "wires": [
             []
         ]
@@ -3351,7 +3537,7 @@
         "finalize": "",
         "libs": [],
         "x": 640,
-        "y": 880,
+        "y": 900,
         "wires": [
             [
                 "3c3321ef3d105be0"
@@ -3387,10 +3573,11 @@
         "colorThumb": "",
         "showTextField": true,
         "x": 460,
-        "y": 1020,
+        "y": 1060,
         "wires": [
             [
-                "059ec5ae6fe47060"
+                "059ec5ae6fe47060",
+                "7c1646ae05a37e45"
             ]
         ]
     },
@@ -3407,7 +3594,7 @@
         "pendingWarnLevel": 50,
         "pendingErrorLevel": 100,
         "x": 850,
-        "y": 1020,
+        "y": 1060,
         "wires": [
             []
         ]
@@ -3426,7 +3613,7 @@
         "finalize": "",
         "libs": [],
         "x": 640,
-        "y": 1020,
+        "y": 1060,
         "wires": [
             [
                 "35519cde47a513a6"
@@ -3440,8 +3627,8 @@
         "g": "da63248a1cc4b4af",
         "name": "Manage and Init Axes Sliders",
         "info": "",
-        "x": 780,
-        "y": 1100,
+        "x": 200,
+        "y": 1200,
         "wires": []
     },
     {
@@ -3893,6 +4080,130 @@
         "wires": [
             [
                 "0712c9aaa2576642"
+            ]
+        ]
+    },
+    {
+        "id": "b249cd330da477ec",
+        "type": "link out",
+        "z": "66b713bff26c6577",
+        "g": "fab458635840f194",
+        "name": "link out X Position",
+        "mode": "link",
+        "links": [
+            "368d5407b6b24fc2"
+        ],
+        "x": 635,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "0a9755862611fd03",
+        "type": "link out",
+        "z": "66b713bff26c6577",
+        "g": "b4acbb4fa910b71d",
+        "name": "link out Y Position",
+        "mode": "link",
+        "links": [
+            "368d5407b6b24fc2"
+        ],
+        "x": 645,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "d754889552b4d824",
+        "type": "link out",
+        "z": "66b713bff26c6577",
+        "g": "399266970ed3c8d1",
+        "name": "link out Z Position",
+        "mode": "link",
+        "links": [
+            "368d5407b6b24fc2"
+        ],
+        "x": 675,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "7c1646ae05a37e45",
+        "type": "function",
+        "z": "66b713bff26c6577",
+        "g": "399266970ed3c8d1",
+        "name": "Z Axis Message",
+        "func": "var position = msg.payload;\n\nmsg.payload = {Action:\"Z axis position\",Value:position};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 1120,
+        "wires": [
+            [
+                "d754889552b4d824",
+                "720cd3c91808a3f0"
+            ]
+        ]
+    },
+    {
+        "id": "720cd3c91808a3f0",
+        "type": "debug",
+        "z": "66b713bff26c6577",
+        "g": "399266970ed3c8d1",
+        "name": "Z-Message",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "1e3061c59c4cd36b",
+        "type": "function",
+        "z": "66b713bff26c6577",
+        "g": "b4acbb4fa910b71d",
+        "name": "Y Axis Message",
+        "func": "var position = msg.payload;\n\nmsg.payload = {Action:\"y axis position\",Value:position};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 960,
+        "wires": [
+            [
+                "0a9755862611fd03"
+            ]
+        ]
+    },
+    {
+        "id": "a6d3a6403e3aa2f2",
+        "type": "function",
+        "z": "66b713bff26c6577",
+        "g": "fab458635840f194",
+        "name": "X Axis Message",
+        "func": "var position = msg.payload;\n\nmsg.payload = {Action:\"x axis position\",Value:position};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 820,
+        "wires": [
+            [
+                "b249cd330da477ec"
             ]
         ]
     },

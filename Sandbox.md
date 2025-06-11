@@ -74,3 +74,72 @@ The JIT can further optimize code based on how it’s used, making repeated oper
 Think of a chef who first follows a recipe step by step (interpreting), but after making the dish several times, memorizes and streamlines the process (compiling and optimizing).
 
 Let me know if you want a deeper technical example!
+
+```js
+const dataArray = [
+    { id: 1, name: "Alpha", value: Math.random() * 100 },
+    { id: 2, name: "Bravo", value: Math.random() * 100 },
+    { id: 3, name: "Charlie", value: Math.random() * 100 },
+    { id: 4, name: "Delta", value: Math.random() * 100 },
+    { id: 5, name: "Echo", value: Math.random() * 100 },
+    { id: 6, name: "Foxtrot", value: Math.random() * 100 },
+    { id: 7, name: "Golf", value: Math.random() * 100 },
+    { id: 8, name: "Hotel", value: Math.random() * 100 },
+    { id: 9, name: "India", value: Math.random() * 100 },
+    { id: 10, name: "Juliet", value: Math.random() * 100 }
+];
+```
+
+```js
+var newMsg = {}
+var myArray = msg.payload.listDiagnosisIdentificationWithTimestamp
+newMsg.payload = "Pending diagnostics:<br>"
+for (let index = 0; index < (myArray.length -1); ++index) {
+    newMsg.payload += index + ": " 
+    + myArray[index].diagnosisIdentification.mainDiagnosisNumber 
+    + ", " + myArray[index].diagnosisIdentification.detailedDiagnosisNumber 
+    + ", " + myArray[index].diagnosisIdentification.entity + ";<br>"
+}
+return newMsg;
+```
+
+```js
+const names = ["Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliet"];
+const dataArray = [];
+for (let i = 0; i < names.length; i++) {
+    dataArray.push({
+        id: i + 1,
+        name: names[i],
+        value: Math.random() * 100
+    });
+}
+```
+
+## Example of pending diagnostics
+
+```js
+var newMsg = {}
+var myArray = msg.payload.listDiagnosisIdentificationWithTimestamp
+var newDiagArray = [];
+
+for (let index = 0; index < (myArray.length -1); ++index) {
+    newDiagArray.push({
+        TimeStamp: myArray[index].timestamp,
+        MainDiagNumber: myArray[index].diagnosisIdentification.mainDiagnosisNumber,
+        DetailledDiagNumber: myArray[index].diagnosisIdentification.detailedDiagnosisNumber,
+        Entity: myArray[index].diagnosisIdentification.entity
+    });
+}
+
+newMsg.payload = newDiagArray;
+
+return newMsg;
+```
+
+```
+var position = msg.payload;
+
+msg.payload = {Action:"Z axis message",value:position};
+return msg;
+
+```

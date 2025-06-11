@@ -860,42 +860,119 @@ But you must select the group where you want to display the widget.
 </figure>
 </div>
 
-## URS
--   Ideally we want to use widgets to modify parameters in the PLC.
--   We want to save parameters in a file
--   We want to restore parameters from a file
-    We want to log any input change in a file, see : **link in** and **link out**. nodes.
+## URS 1
 
-Not finished.
-
-|URS ID |Specification|
-|-------|-------------|
-|0. |Starting|
-|0.1   |Dans cet état, les axes X et Z vont se positionner aux positions **X = -100** et **Z = 100**.|
-|0.2   |Quand les deux axes sont en position, on passe en Execute.|
-
-
-
-
-
-|Id |Move To Position X|M.T.P Z |Action      |Delay [ms] |Next Id|
-|---|------------------|--------|------------|-----------|-------|
-|1  |0                 |50      |eOpen       |500        |2      |
-|2  |0                 |-50       |eClose      |0          |3      |
-|3  |100               |-50       |eOpen       |0          |4      |
-|4  |100               |50      |eClose      |0          |1      |
-|1  |0                 |50      |eOpen       |500        |2      |
-
--  Velocity_m_s        := 0.05;
--  Acceleleration_m_s2 := 1;
--  Jerk_m_s3           := 10;
+### Pending Diagnostics
+On the CtrlX Core, there is a page to display pending diagnostics. It can be found here: 
+https://192.168.0.200/diagnostics/pending-diagnostics .
 
 <div style="text-align: center;">
 <figure>
-    <img src="./img/DriveSquare.png"
-         alt="Image Lost DriveSquare">
-    <figcaption>2D motion with a square</figcaption>
+    <img src="./img/CtrlX_Pending_Diagnostics.png"
+         alt="Image Lost CtrlX_Pending_Diagnostics" width = "500">
+    <figcaption>CtrlX Pending Diagnostics</figcaption>
 </figure>
 </div>
 
+You can get this information from the Data Layer using a CtrlX Subscribe node with this **path:** ``diagnosis/get/actual/list``.
 
+<div style="text-align: center;">
+<figure>
+    <img src="./img//Group_PendingDiagnostics.png"
+         alt="Image Lost Group_PendingDiagnostics" width = "500">
+    <figcaption>Group Pending Diagnostics</figcaption>
+</figure>
+</div>
+
+We want to display this infomation on Node-RED UI with this form:
+
+<div style="text-align: center;">
+<figure>
+    <img src="./img/URS_UI_Pending_Diagnostics.png"
+         alt="Image Lost URS_Pending_Diagnostics" width = "500">
+    <figcaption>UI Pending Diagnostics</figcaption>
+</figure>
+</div>
+
+#### Your Job
+Write the function **Build Pending Diagnostics Array** in JavaScript, to send a message to the table and test it.
+
+## URS 2
+There are two groups in page User Interface for Lab 07, with name **Function Block Gripper**, and **Group Robot Position**.
+
+<div style="text-align: center;">
+<figure>
+    <img src="./img/Robot Open Close.png"
+         alt="Image Lost Robot Open Close" width = "500">
+    <figcaption>Group Robot Open Close</figcaption>
+</figure>
+</div>
+
+<div style="text-align: center;">
+<figure>
+    <img src="./img/Group Robot Position.png"
+         alt="Image Lost Group Robot Position" width = "500">
+    <figcaption>Group Robot Position</figcaption>
+</figure>
+</div>
+
+We want to log all commands sent to the robot with:
+-   Slider Axis X
+-   Slider Axis Y
+-   Slider Axis Z
+-   Open Gripper
+-   Close Gripper
+
+in a file with name: **C:/Users/first_name.last_name/Documents/RobotLogger/LogRobot.json**.
+first_name and last_name are yours.
+
+#### Your Job
+Complete your flow to write this log file.
+Hints : 
+-   Buttons Open and Close are in Flow UI Gripper.
+-   Slider for X, Y and Z positions are in Flow Get Position
+-   Use **link in** node to sum all events
+-   Use **link out** to collect all payloads 
+
+<div style="text-align: center;">
+<figure>
+    <img src="./img/Group Build Z Axis Message.png"
+         alt="Image Lost Group Build Z Axis Message" width = "500">
+    <figcaption>Group Build Z Axis Message, Link Out has name: link out Z Position</figcaption>
+</figure>
+</div>
+
+```js
+// Example of payload
+{
+    Action: "Z axis position"
+    value: -46
+}
+```
+
+<div style="text-align: center;">
+<figure>
+    <img src="./img/Link In Logger.png"
+         alt="Image Lost Link In Logger" width = "300">
+    <figcaption>Edit Link In Logger, example</figcaption>
+</figure>
+</div>
+
+The result should look like this:
+
+```json
+{"Action":"Z axis position","Value":-74}
+{"Action":"Z axis position","Value":-51}
+{"Action":"Z axis position","Value":-6}
+{"Action":"Z axis position","Value":33}
+{"Action":"x axis position","Value":4}
+{"Action":"y axis position","Value":-8}
+{"Action":"Open Gripper","Value":true}
+{"Action":"Close Gripper","Value":true}
+```
+
+## URS 3
+If you have already completed URS 2, you can complete URS 3 with the PLC timestamp in front of each record, see PackML Flow, PLC Time. Then add a condition to record commands only when Pack is in the **Execute** state and in **Manual** mode.
+
+
+<!-- End of file -->
