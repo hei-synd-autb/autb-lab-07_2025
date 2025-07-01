@@ -425,7 +425,7 @@ Node-RED messages consist of several key properties essential for data handling 
 
 -   msg.**_msgid**: A unique identifier for the message, automatically assigned by Node-RED. It helps in tracking and debugging messages within the flow.
 -   msg.**payload**: This is the primary data of the message. It contains the main information that nodes process and act upon, such as sensor readings or user input.
--   msg.**topic**: An optional property used to categorize or identify the message. It can be useful for routing or filtering messages based on their context.
+-   msg.**topic**: An optional property used to categorize or identify the message. For example, topic is used to set or transmit the path for communication with the CtrlX Data Layer on Rexroth or ADS protocol on Beckhoff.
 
 These are the most common properties you'll encounter in Node-RED, Also additional properties can be added as needed.
 
