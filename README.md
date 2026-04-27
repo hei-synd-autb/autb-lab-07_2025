@@ -401,7 +401,7 @@ You should be able your complete parameter
 </figure>
 </div>
 
-> In this course with version V1.20 of the software in CtrlX Core, it is still not possible to send dirctly IEC 61131-3 STRUCT in Node-RED. This is possible with the new version or, for example with a Beckhoff.
+
 
 #### Comparison: IEC 61131-3 STRUCT vs JavaScript Object
 
