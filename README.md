@@ -741,13 +741,10 @@ Configure the json node
 Finally, the code of the function, we build two messages for two differents outputs.
 
 ```js
-var msg_1 = { payload: msg.payload.length };
-msg_1.payload = msg.payload[0];
+let msg1 = { payload: msg.payload[0] };
+let msg2 = { payload: msg.payload[1] };
 
-var msg_2 = { payload: msg.payload.length };
-msg_2.payload = msg.payload[1];
-
-return [msg_1, msg_2] ;
+return [msg1, msg2];
 ```
 
 ---
