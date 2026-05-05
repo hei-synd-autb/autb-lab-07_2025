@@ -9,6 +9,9 @@
 Course AutB
 
 Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
+> Version 2026, V1.0 
+
+
 
 # LAB 07 Node-RED
 
@@ -165,7 +168,7 @@ Subflow node can itself **only have at most one input**.
 We can import and/or export a flow as a whole project. This option, must be considered for the use of Node-RED in a real project.
 
 ### Palette
-One of the strength of Node-RED is the large amount of modules. 5406 at the time this section is written.
+One of the strength of Node-RED is the large amount of modules. 5483 at the time this section is written.
 
 When you start with Node-RED, there is a set of default palettes for:
 
@@ -767,7 +770,7 @@ We will use the subscription to read data change from the PLC and request a writ
 Note that: at least one the ctrlX automation node must be configured with:
 -   The **IP address** of the PLC, here: ``192.168.0.200``.
 -   The **username** of the PLC, here: ``boschrexroth``.
--   The **password** of the PLC, here: ``boschrexroth``.
+-   The **password** of the PLC, here: ``Industrie_21``.
 
 To access a PLC data, the variable must have been configured in read/write access in the **Symbols of CtrlX PLC IDE**.
 
