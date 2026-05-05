@@ -173,9 +173,9 @@
             "62d55bf8b5fed827",
             "c391a9a9118d3b12"
         ],
-        "x": 34,
+        "x": 24,
         "y": 39,
-        "w": 652,
+        "w": 662,
         "h": 242
     },
     {
@@ -621,42 +621,6 @@
         }
     },
     {
-        "id": "66c6923e3822666a",
-        "type": "ui-page",
-        "name": "User Interface for Lab 07",
-        "ui": "926d3079c9560d19",
-        "path": "/robot",
-        "icon": "robot-happy-outline",
-        "layout": "grid",
-        "theme": "8966a7b403a8fb88",
-        "breakpoints": [
-            {
-                "name": "Default",
-                "px": "0",
-                "cols": "3"
-            },
-            {
-                "name": "Tablet",
-                "px": "576",
-                "cols": "6"
-            },
-            {
-                "name": "Small Desktop",
-                "px": "768",
-                "cols": "9"
-            },
-            {
-                "name": "Desktop",
-                "px": "1024",
-                "cols": "12"
-            }
-        ],
-        "order": 2,
-        "className": "",
-        "visible": "true",
-        "disabled": "false"
-    },
-    {
         "id": "e45e312c80fc001e",
         "type": "ctrlx-config",
         "name": "Nodered_CtrlX",
@@ -679,112 +643,6 @@
         "queueSize": "",
         "queueBehaviour": "DiscardOldest",
         "deadbandValue": ""
-    },
-    {
-        "id": "bb97738361048557",
-        "type": "ui-group",
-        "name": "Robot Position",
-        "page": "66c6923e3822666a",
-        "width": "6",
-        "height": "1",
-        "order": 3,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "5e3f352f60d7af69",
-        "type": "ui-page",
-        "name": "Documentations",
-        "ui": "926d3079c9560d19",
-        "path": "/page3",
-        "icon": "home",
-        "layout": "notebook",
-        "theme": "8966a7b403a8fb88",
-        "breakpoints": [
-            {
-                "name": "Default",
-                "px": "0",
-                "cols": "3"
-            },
-            {
-                "name": "Tablet",
-                "px": "576",
-                "cols": "6"
-            },
-            {
-                "name": "Small Desktop",
-                "px": "768",
-                "cols": "9"
-            },
-            {
-                "name": "Desktop",
-                "px": "1024",
-                "cols": "12"
-            }
-        ],
-        "order": 3,
-        "className": "",
-        "visible": "true",
-        "disabled": "false"
-    },
-    {
-        "id": "6b2222aa7324c02b",
-        "type": "ui-group",
-        "name": "Base",
-        "page": "5e3f352f60d7af69",
-        "width": "6",
-        "height": "1",
-        "order": 2,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "f52f774838673224",
-        "type": "ui-group",
-        "name": "Commands and Read",
-        "page": "66c6923e3822666a",
-        "width": "6",
-        "height": "1",
-        "order": 1,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "6f4d4cc842955c98",
-        "type": "ui-group",
-        "name": "CPU",
-        "page": "5e3f352f60d7af69",
-        "width": "6",
-        "height": "1",
-        "order": 1,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "5765b0da98500f6a",
-        "type": "ui-group",
-        "name": "Function Block Gripper",
-        "page": "66c6923e3822666a",
-        "width": "6",
-        "height": "1",
-        "order": 2,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
     },
     {
         "id": "926d3079c9560d19",
@@ -897,20 +755,6 @@
         "groupType": "default"
     },
     {
-        "id": "aad8bd12c162de85",
-        "type": "ui-group",
-        "name": "Axis Move Absolute",
-        "page": "66c6923e3822666a",
-        "width": "6",
-        "height": "1",
-        "order": 4,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
         "id": "7b877229.678964",
         "type": "ctrlx-config",
         "name": "localhost",
@@ -952,6 +796,162 @@
         "className": "",
         "visible": "true",
         "disabled": "false"
+    },
+    {
+        "id": "66c6923e3822666a",
+        "type": "ui-page",
+        "name": "User Interface for Lab 07",
+        "ui": "926d3079c9560d19",
+        "path": "/robot",
+        "icon": "robot-happy-outline",
+        "layout": "grid",
+        "theme": "8966a7b403a8fb88",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "bb97738361048557",
+        "type": "ui-group",
+        "name": "Robot Position",
+        "page": "66c6923e3822666a",
+        "width": "6",
+        "height": "1",
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "5e3f352f60d7af69",
+        "type": "ui-page",
+        "name": "Documentations",
+        "ui": "926d3079c9560d19",
+        "path": "/page3",
+        "icon": "home",
+        "layout": "notebook",
+        "theme": "8966a7b403a8fb88",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 3,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "6b2222aa7324c02b",
+        "type": "ui-group",
+        "name": "Base",
+        "page": "5e3f352f60d7af69",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "f52f774838673224",
+        "type": "ui-group",
+        "name": "Commands and Read",
+        "page": "66c6923e3822666a",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "6f4d4cc842955c98",
+        "type": "ui-group",
+        "name": "CPU",
+        "page": "5e3f352f60d7af69",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "5765b0da98500f6a",
+        "type": "ui-group",
+        "name": "Function Block Gripper",
+        "page": "66c6923e3822666a",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "aad8bd12c162de85",
+        "type": "ui-group",
+        "name": "Axis Move Absolute",
+        "page": "66c6923e3822666a",
+        "width": "6",
+        "height": "1",
+        "order": 4,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
     },
     {
         "id": "e4a4e186145c35ce",
@@ -2363,7 +2363,9 @@
         "className": "",
         "x": 590,
         "y": 960,
-        "wires": []
+        "wires": [
+            []
+        ]
     },
     {
         "id": "fb3ab66a497550f6",
@@ -3811,7 +3813,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 500,
-        "y": 360,
+        "y": 380,
         "wires": []
     },
     {
