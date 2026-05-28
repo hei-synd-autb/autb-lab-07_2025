@@ -1,6 +1,6 @@
 # Notes de rédaction.
 
-#Test 2
+
 
 ## User Requirements Specification (URS)
 
