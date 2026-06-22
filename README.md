@@ -13,6 +13,15 @@ Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 
 <b style='color:red;'>Warning</b> *the plc code of this lab is build on an old version of the framework. Do not use it as basis for new project.*
 
+---
+## Update on Unit 01, to be validated.
+-   Node.js v24.15.0
+-   Node-RED v5.0.0
+-   PLC Engineering v3.6.4
+-   X3_System_Apps_3.6.9
+-   DC_App_Paket_3.6.8
+---
+
 # LAB 07 Node-RED
 
 ## Preamble
