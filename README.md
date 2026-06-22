@@ -11,7 +11,7 @@ Course AutB
 Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 > Version 2026, V1.0 
 
-
+<b style='color:red;'>Warning</b> *the plc code of this lab is build on an old version of the framework. Do not use it as basis for new project.*
 
 # LAB 07 Node-RED
 
