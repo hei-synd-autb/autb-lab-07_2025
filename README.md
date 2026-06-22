@@ -20,6 +20,11 @@ Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 -   PLC Engineering v3.6.4
 -   X3_System_Apps_3.6.9
 -   DC_App_Paket_3.6.8
+
+> Profinet device **must** be manually updated, go in Profinet and click update firmware.
+
+After Profinet Update, it works with last updates.
+
 ---
 
 # LAB 07 Node-RED
